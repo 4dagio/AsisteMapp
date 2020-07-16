@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://3.15.234.247:8080",
+        "target": "https://plataforma.asisteapp.co",
         "secure": false,
         "changeOrigin": true,
         "logLevel": "debug",

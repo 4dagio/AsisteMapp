@@ -8,7 +8,7 @@ providedIn: 'root'
 export class ApiService {
     
 
-private SERVER_URL = "http://3.15.234.247:8080/AsistePlatform";
+private SERVER_URL = "https://plataforma.asisteapp.co";
 
 constructor(private httpClient: HttpClient) {
     
