@@ -15,6 +15,6 @@ constructor(private httpClient: HttpClient) {
 
 public reloadLocation(id: string){
     
-    return this.httpClient.get(`http://3.15.234.247:8080/AsistePlatform/UbicationLinkAPI.jsn?id=${id}`);
+    return this.httpClient.get(`/api/AsistePlatform/UbicationLinkAPI.jsn?id=${id}`);
     }
  }
