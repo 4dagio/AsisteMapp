@@ -15,6 +15,6 @@ constructor(private httpClient: HttpClient) {
 }
 
 public reloadLocation(id: string): Observable<any>{
-    return this.httpClient.get(`/api/AsistePlatform/UbicationLinkAPI.jsn?id=${id}`, {responseType: 'json'});
+    return this.httpClient.get(`http://asisteservicewebapi-dev.us-west-2.elasticbeanstalk.com/api/Service/statusService?id=${id}`, {responseType: 'json'});
     }
  }
