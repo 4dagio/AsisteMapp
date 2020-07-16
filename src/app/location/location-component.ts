@@ -160,6 +160,10 @@ export class LocationComponent {
         return;
         }
       }
+      err => {
+        console.error(err);
+        console.log(err);
+      }
       })
     }else{
       console.log("Estado: Terminado");

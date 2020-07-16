@@ -103,7 +103,8 @@
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "map-location:build:production"
+                            "browserTarget": "map-location:build:production",
+                            "proxyConfig": "./proxy.conf.json"
                         }
                     }
                 },
@@ -111,6 +112,7 @@
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
                         "browserTarget": "map-location:build"
+
                     }
                 },
                 "test": {
@@ -171,11 +173,13 @@
                 "ionic-cordova-build": {
                     "builder": "@ionic/angular-toolkit:cordova-build",
                     "options": {
-                        "browserTarget": "map-location:build"
+                        "browserTarget": "map-location:build",
+                        "proxyConfig": "./proxy.conf.json"
                     },
                     "configurations": {
                         "production": {
-                            "browserTarget": "map-location:build:production"
+                            "browserTarget": "map-location:build:production",
+                            "proxyConfig": "./proxy.conf.json"
                         }
                     }
                 }
