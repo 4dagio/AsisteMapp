@@ -101,7 +101,6 @@ export class LocationComponent {
         this.loading.present(); 
     this.api.reloadLocation(str).subscribe((data: ServiceModel) => {
       this.loading.dismiss();
-      console.log(data);
       this.markers =  [
         {
           position: {
@@ -178,7 +177,6 @@ export class LocationComponent {
 
   isBase64(str) {
     var validateSting =  atob(str)
-    console.log(validateSting);
     try {
       if(validateSting.includes('|')){
         return true;
