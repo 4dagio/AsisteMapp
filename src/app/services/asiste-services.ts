@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
 providedIn: 'root'
@@ -13,8 +14,7 @@ constructor(private httpClient: HttpClient) {
     
 }
 
-public reloadLocation(id: string){
-    
+public reloadLocation(id: string): Observable<any>{
     return this.httpClient.get(`/api/AsistePlatform/UbicationLinkAPI.jsn?id=${id}`);
     }
  }
