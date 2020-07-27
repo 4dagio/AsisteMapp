@@ -5,8 +5,8 @@ ion-content {
 
 .map {
     display: block;
-    height: 60%;
-    max-height: 50%;
+    height: 80%;
+    max-height: 60%;
 }
 
 .content-user {
@@ -98,34 +98,44 @@ button:disabled {
     height: 50%;
     position: absolute;
     border-left: 10px solid #93939385;
-    top: -1px;
+    top: -5px;
     margin-left: 5px;
     border-radius: 25px;
 }
 
-.content-status {
-    margin-top: 15px;
-}
-
-.myColor {
+.footer-by {
+    height: 20vh;
     background-color: #000000c9;
-    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    max-height: 50% !important;
+    align-items: center !important;
+    text-align: center !important;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: white !important;
     padding: 8px;
     margin-top: 4%;
     width: 100%;
     max-width: 100%;
-    background-image: url("../../assets/imgs/favAsiste.png");
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 27px;
+    // background-image: url("../../assets/imgs/logoAsiste.png");
+    // background-repeat: no-repeat;
+    // background-size: 27px;
     position: fixed;
     left: 0px;
     bottom: 0px;
     height: 30px;
     width: 100%;
+    .href-link {
+        color: white;
+        background-color: transparent;
+    }
+}
+
+.footer-simple {
+    height: 20vh;
+    /*Or fixed pixel unit*/
+    background-color: black;
 }
 
 .title-center {
@@ -134,4 +144,12 @@ button:disabled {
 
 .masterContent {
     background-color: gray;
+}
+
+.asiste-style {
+    background-color: rgba(56, 56, 153, 0.014);
+}
+
+.label-check {
+    font-size: 14px;
 }

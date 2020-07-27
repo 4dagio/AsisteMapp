@@ -9,7 +9,7 @@ import { LocationComponent } from './location/location-component';
 
 //Routes
 import { APP_ROUTING } from './app.routes';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { IonicModule } from '@ionic/angular';
     APP_ROUTING
     
   ],
-  providers: [],
+  providers: [AlertController],
   bootstrap: [AppComponent]
   
 })
