@@ -10,15 +10,18 @@ export class AlertService {
 
   constructor(public alertController: AlertController) { }
   
-  async present() {
-    this.isAlert = true;
-    return await this.alertController.create({
-        header: 'Use this lightsaber?',
-        message: 'Do you agree to use this lightsaber to do good across the galaxy?',
-        buttons: ['Disagree', 'Agree']
+ //prepare and call function to use
+async presentAlert() {
+    const alert = await this.alertController.create({
+      backdropDismiss: false,  
+      animated: true,
+      header: 'El servicio ya finalizo.'
+      
     });
+
+    await alert.present();
+  }
+    
 
   }
 
-  
-}
