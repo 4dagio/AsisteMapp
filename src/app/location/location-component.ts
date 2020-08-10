@@ -180,6 +180,7 @@ export class LocationComponent {
           this.status.enservicio = true;
           this.status.terminado = true;
           this.loading.dismiss();
+          this.alertService.presentAlert();
           return;
           }
         }
