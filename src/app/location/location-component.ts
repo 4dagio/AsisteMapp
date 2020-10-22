@@ -62,6 +62,7 @@ export class LocationComponent {
   zoom = 12;
   id: string;
   isFinished: boolean = false;
+  public idInterval: any;
 
   constructor(
     public api: ApiService, 
@@ -99,7 +100,7 @@ export class LocationComponent {
           this.isFinished = false;
             this.loading.present();
             this.loadMap(this.idService);
-            setInterval(() => {
+            this.idInterval = setInterval(() => {
             this.renderMarkers(this.idService);
             if(this.loading.isLoading){
               this.loading.dismiss();
@@ -191,6 +192,7 @@ export class LocationComponent {
           this.loading.dismiss();
           // this.alertService.presentAlert();
           this.route.navigate(['/rating', this.idService]);
+          clearInterval(this.idInterval);
           return;
           }
         }
