@@ -21,6 +21,8 @@
         "@angular/router": "~10.0.3",
         "@ionic/angular": "^5.2.3",
         "@types/googlemaps": "^3.39.9",
+        "ionic-rating": "^2.0.0",
+        "ionic-rating-component": "^1.1.6",
         "rxjs": "~6.5.5",
         "tslib": "^2.0.0",
         "zone.js": "~0.10.3"

@@ -15,7 +15,7 @@ async presentAlert() {
     const alert = await this.alertController.create({
       backdropDismiss: false,  
       animated: true,
-      header: 'El servicio ya finalizo.'
+      header: '¡Muchas gracias por responder!.'
       
     });
 

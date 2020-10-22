@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location/location-component';
+import { RatingComponent } from './rating/rating.component';
+import { IonicRatingModule } from 'ionic-rating';
 
 //Routes
 import { APP_ROUTING } from './app.routes';
@@ -14,11 +16,14 @@ import { IonicModule, AlertController } from '@ionic/angular';
 @NgModule({
   declarations: [
     AppComponent,
-    LocationComponent
+    LocationComponent,
+    RatingComponent
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    IonicRatingModule,
     CommonModule,
     IonicModule.forRoot(),
     FormsModule,

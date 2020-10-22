@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/asiste-services';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LoadingService } from 'src/app/common/loading';
 import { AlertService } from 'src/app/common/alert';
 
@@ -23,6 +23,8 @@ interface ServiceModel{
   foto: any;
   servicio: any;
   logo: any;
+  comentario: any;
+  code: any;
 }
 
 export class StatusServiceModel{
@@ -61,11 +63,15 @@ export class LocationComponent {
   id: string;
   isFinished: boolean = false;
 
-  constructor(public api: ApiService, private rutaActiva: ActivatedRoute,public loading: LoadingService,
-    public alertService: AlertService) {}
+  constructor(
+    public api: ApiService, 
+    private rutaActiva: ActivatedRoute,
+    public loading: LoadingService,
+    public alertService: AlertService,
+    public route: Router) {}
 
   async ngOnInit(){
-
+    console.log("que pasa");
     this.status = new StatusServiceModel();
     this.status.buscando = true;
     this.isIdService = this.isBase64(this.rutaActiva.snapshot.params.params);
@@ -79,10 +85,14 @@ export class LocationComponent {
     };
 
     this.api.reloadLocation(this.idService).subscribe((data: ServiceModel) => {
-      // if(data){
+      console.log(data);     
+      if(data.estado === 'Terminado' && data.comentario === '0'){
+          this.route.navigate(['/rating', this.idService]);
+        }
+      if(data.code === 401){
+        data.estado = "Terminado";
+      }  
       if(data.estado === 'Terminado'){
-        console.log(data);
-        console.log(this.isFinished);
         this.isFinished = true;
         this.logoEmpresa = data.logo;
         }else{
@@ -174,13 +184,12 @@ export class LocationComponent {
         }
     
         if(data.estado == 'Terminado' || data.estado == "Fallido"){
-         
           this.status.encontrado = true;
           this.status.encamino = true;
           this.status.enservicio = true;
           this.status.terminado = true;
           this.loading.dismiss();
-          this.alertService.presentAlert();
+          // this.alertService.presentAlert();
           return;
           }
         }
@@ -203,17 +212,6 @@ export class LocationComponent {
   }
 
   isBase64(str) {
-    var validateSting =  atob(str)
-    try {
-      if(validateSting.includes('|')){
-        return true;
-      }else{
-        return false;
-      };
-    } catch (err) {
-      return false;
-    }
+    return  btoa(atob(str)) == str;
   }
 }
-
-  

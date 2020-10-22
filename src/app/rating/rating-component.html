@@ -1,0 +1,106 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false" *ngIf="this.isFinished === true">
+    <ion-slides>
+        <ion-slide>
+            <div class="slide">
+                <ion-card color="dark">
+                    <ion-card-header>
+                        <ion-card-title *ngIf="logoEmpresa != null">
+                            <img src="{{logoEmpresa}}" fullscreen/>
+                        </ion-card-title>
+                    </ion-card-header>
+                    <img src="../../assets/imgs/snooze.jpg" style="max-width: 46%" />
+
+                    <h2>El servicio ya finalizo.</h2>
+                    <br><br><br><br><br><br>
+                    <br><br><br><br><br><br>
+                    <ion-footer class="footer-by">
+                        Powered by
+                        <a class="href-link" href="https://www.asisteapp.co/" target="_blank">
+                        asisteapp.co
+                        </a>
+                    </ion-footer>
+                </ion-card>
+
+            </div>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
+
+<ion-content fullscreen *ngIf="this.isFinished === false">
+    <ion-header translucent="true">
+        <ion-toolbar class="new-background-color">
+            <ion-title>
+                <img class="usr-img" style="margin-top: 10px;" src="{{logoEmpresa}}">
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-card style="margin-top: -5px;">
+        <ion-card-header>
+            <ion-card-title class="center">¡Gracias por elegirnos!</ion-card-title>
+        </ion-card-header>
+
+    </ion-card>
+
+    <ion-row>
+        <ion-col size="7" class="content-user">
+            <ion-card style="margin-top: -8px;">
+                <ion-card-header>
+                    <ion-card-subtitle>
+                    </ion-card-subtitle>
+
+                </ion-card-header>
+                <ion-card-content>
+                    <img src="{{foto}}" class="img-user" *ngIf="foto != null" />
+                    <!-- <img class="img-user" src="{{foto}}"> -->
+                    <!--ion-icon class="user-img" name="person-circle-outline" *ngIf="foto == null">
+                    </ion-icon-->
+                    <!-- <ion-card-subtitle>{{colaborador}}</ion-card-subtitle> -->
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+
+        <ion-col size="5">
+            <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top: 5px;" *ngIf="colaborador">
+                <b><h5>Colaborador: </h5></b>
+                <h6 style="margin-top: -5px;">{{ colaborador }}</h6>
+            </ion-text>
+            <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" *ngIf="service">
+                <b><h5>Servicio: </h5></b>
+                <h6 style="margin-top: -5px;">{{ service }}</h6>
+            </ion-text>
+            <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" *ngIf="placa">
+                <b><h5>Placa: </h5></b>
+                <h6 style="margin-top: -5px;">{{ placa }}</h6>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+
+    <ion-card style="margin-top: -18px;">
+        <ion-card-header class="center">
+            <ion-card-title>Califica tu servicio</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="center">
+            <ion-rating class="rating" style="margin-top: -25px;" (rateChange)="onRateChange($event)">
+            </ion-rating>
+        </ion-card-content>
+
+        <ion-card-header style="margin-top: -35px;">
+            <ion-card-subtitle class="center">Comparte tus comentarios</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-item style="margin-top: -15px;">
+            <ion-textarea class="ion-input" [(ngModel)]="comment"></ion-textarea>
+        </ion-item>
+        <ion-button expand="block" color="dark" (click)="sendCalification()">Enviar</ion-button>
+
+    </ion-card>
+    <ion-footer class="footer-by" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Powered by
+        <a class="href-link" href="https://www.asisteapp.co/" target="_blank">
+        asisteapp.co
+        </a>
+    </ion-footer>
+
+</ion-content>
