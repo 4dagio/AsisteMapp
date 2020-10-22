@@ -182,14 +182,15 @@ export class LocationComponent {
           this.loading.dismiss();
           return;
         }
-    
-        if(data.estado == 'Terminado' || data.estado == "Fallido"){
+
+        if(data.estado === 'Terminado' || data.estado === "Fallido"){
           this.status.encontrado = true;
           this.status.encamino = true;
           this.status.enservicio = true;
           this.status.terminado = true;
           this.loading.dismiss();
           // this.alertService.presentAlert();
+          this.route.navigate(['/rating', this.idService]);
           return;
           }
         }

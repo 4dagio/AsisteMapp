@@ -62,21 +62,21 @@
 
         <ion-col size="5">
             <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-top: 5px;" *ngIf="colaborador">
-                <b><h5>Colaborador: </h5></b>
+                <b><h5 style="margin-top: -5px;">Colaborador: </h5></b>
                 <h6 style="margin-top: -5px;">{{ colaborador }}</h6>
             </ion-text>
             <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" *ngIf="service">
-                <b><h5>Servicio: </h5></b>
+                <b><h5 style="margin-top: -2px;">Servicio: </h5></b>
                 <h6 style="margin-top: -5px;">{{ service }}</h6>
             </ion-text>
             <ion-text color="center dark" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" *ngIf="placa">
-                <b><h5>Placa: </h5></b>
+                <b><h5 style="margin-top: -2px;">Placa: </h5></b>
                 <h6 style="margin-top: -5px;">{{ placa }}</h6>
             </ion-text>
         </ion-col>
     </ion-row>
 
-    <ion-card style="margin-top: -18px;">
+    <ion-card style="margin-top: -5px;">
         <ion-card-header class="center">
             <ion-card-title>Califica tu servicio</ion-card-title>
         </ion-card-header>
@@ -90,9 +90,10 @@
             <ion-card-subtitle class="center">Comparte tus comentarios</ion-card-subtitle>
         </ion-card-header>
 
-        <ion-item style="margin-top: -15px;">
+        <ion-item>
             <ion-textarea class="ion-input" [(ngModel)]="comment"></ion-textarea>
         </ion-item>
+
         <ion-button expand="block" color="dark" (click)="sendCalification()">Enviar</ion-button>
 
     </ion-card>
