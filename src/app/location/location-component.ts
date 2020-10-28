@@ -72,21 +72,10 @@ export class LocationComponent {
     public route: Router) {}
 
   async ngOnInit(){
-    console.log("que pasa");
     this.status = new StatusServiceModel();
     this.status.buscando = true;
-    this.isIdService = this.isBase64(this.rutaActiva.snapshot.params.params);
-
-    if(this.isIdService){
-      let params = atob(this.rutaActiva.snapshot.params.params);
-      let paramsFormat = params.split('|');
-      this.idService = paramsFormat[6];
-    }else {
-      this.idService = this.rutaActiva.snapshot.params.params;
-    };
-
+    this.idService = this.rutaActiva.snapshot.params.params;
     this.api.reloadLocation(this.idService).subscribe((data: ServiceModel) => {
-      console.log(data);     
       if(data.estado === 'Terminado' && data.comentario === '0'){
           this.route.navigate(['/rating', this.idService]);
         }
@@ -98,17 +87,17 @@ export class LocationComponent {
         this.logoEmpresa = data.logo;
         }else{
           this.isFinished = false;
-            this.loading.present();
-            this.loadMap(this.idService);
-            this.idInterval = setInterval(() => {
+          this.loading.present();
+          this.loadMap(this.idService);
+          this.idInterval = setInterval(() => {
             this.renderMarkers(this.idService);
             if(this.loading.isLoading){
               this.loading.dismiss();
-              } else {
+              } else { 
                 this.loading.present();
             }
-          }, 30000);}
-        })
+          }, 30000)}
+    });
   }
 
   async loadMap(id) {
@@ -198,11 +187,10 @@ export class LocationComponent {
         }
         err => {
           console.error(err);
-          console.log(err);
         }
         });
       }else{
-        console.log("Estado: Terminado");
+        console.log("End");
       } 
   }
 
@@ -212,9 +200,5 @@ export class LocationComponent {
       map: this.map,
       title: marker.title
     });
-  }
-
-  isBase64(str) {
-    return  btoa(atob(str)) == str;
   }
 }

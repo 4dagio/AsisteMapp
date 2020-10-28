@@ -42,20 +42,11 @@
 
     </ion-card>
 
-    <ion-row>
+    <ion-row style="margin-bottom: -15px;">
         <ion-col size="7" class="content-user">
-            <ion-card style="margin-top: -8px;">
-                <ion-card-header>
-                    <ion-card-subtitle>
-                    </ion-card-subtitle>
-
-                </ion-card-header>
+            <ion-card style="margin-top: -10px;">
                 <ion-card-content>
                     <img src="{{foto}}" class="img-user" *ngIf="foto != null" />
-                    <!-- <img class="img-user" src="{{foto}}"> -->
-                    <!--ion-icon class="user-img" name="person-circle-outline" *ngIf="foto == null">
-                    </ion-icon-->
-                    <!-- <ion-card-subtitle>{{colaborador}}</ion-card-subtitle> -->
                 </ion-card-content>
             </ion-card>
         </ion-col>
@@ -76,7 +67,7 @@
         </ion-col>
     </ion-row>
 
-    <ion-card style="margin-top: -5px;">
+    <ion-card style="margin-top: -8px;">
         <ion-card-header class="center">
             <ion-card-title>Califica tu servicio</ion-card-title>
         </ion-card-header>
@@ -86,8 +77,8 @@
             </ion-rating>
         </ion-card-content>
 
-        <ion-card-header style="margin-top: -35px;">
-            <ion-card-subtitle class="center">Comparte tus comentarios</ion-card-subtitle>
+        <ion-card-header style="margin-top: -15px;">
+            <ion-card-subtitle class="center" style="font-size: 18px; margin-top: -22px;">Comparte tus comentarios</ion-card-subtitle>
         </ion-card-header>
 
         <ion-item>
