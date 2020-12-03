@@ -90,7 +90,7 @@ export class LocationComponent {
           if(data.urlEmpresa != ""){
             this.urlCompany = data.urlEmpresa.replace(/ /g, "");
           }else {
-            this.urlCompany = "www.asiste.co"
+            this.urlCompany = "https://www.asisteapp.co"
           }
         
         }else{
@@ -153,7 +153,7 @@ export class LocationComponent {
         if(data.urlEmpresa != ""){
           this.urlCompany = data.urlEmpresa.replace(/ /g, "");
         }else {
-          this.urlCompany = "www.asiste.co"
+          this.urlCompany = "https://www.asisteapp.co"
         }
         this.map = new google.maps.Map(mapEle, {
           center: this.myLatLng,

@@ -92,7 +92,7 @@ export class RatingComponent {
         if(data.urlEmpresa != ""){
           this.urlCompany = data.urlEmpresa.replace(/ /g, "");
         }else {
-          this.urlCompany = "www.asiste.co"
+          this.urlCompany = "https://www.asisteapp.co/"
         }
         
         
