@@ -5,7 +5,7 @@
                 <ion-card color="dark">
                     <ion-card-header>
                         <ion-card-title *ngIf="logoEmpresa != null">
-                            <img src="{{logoEmpresa}}" fullscreen/>
+                            <a class="href-link" href="{{urlCompany}}" target="_blank"><img src="{{logoEmpresa}}" fullscreen/></a>
                         </ion-card-title>
                     </ion-card-header>
                     <img src="../../assets/finished.png" style="max-width: 46%" />
@@ -30,7 +30,7 @@
     <ion-header translucent="true">
         <ion-toolbar class="new-background-color">
             <ion-title>
-                <img class="usr-img" style="margin-top: 10px;" src="{{logoEmpresa}}">
+                <a class="href-link" href="{{urlCompany}}" target="_blank"><img class="usr-img" style="margin-top: 10px;" src="{{logoEmpresa}}"></a>
             </ion-title>
         </ion-toolbar>
     </ion-header>

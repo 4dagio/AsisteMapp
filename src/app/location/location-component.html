@@ -5,7 +5,7 @@
                 <ion-card color="dark">
                     <ion-card-header>
                         <ion-card-title *ngIf="logoEmpresa != null">
-                            <img src="{{logoEmpresa}}" fullscreen/>
+                            <a class="href-link" href="{{urlCompany}}" target="_blank"><img src="{{logoEmpresa}}" fullscreen/></a>
                         </ion-card-title>
                     </ion-card-header>
                     <img src="../../assets/finished.png" style="max-width: 46%" />
@@ -51,7 +51,7 @@
             <ion-card>
                 <ion-card-header color="dark">
                     <ion-card-title *ngIf="logoEmpresa != null">
-                        <img src="{{logoEmpresa}}" fullscreen/>
+                        <a class="href-link" href="{{urlCompany}}" target="_blank"><img src="{{logoEmpresa}}" fullscreen/></a>
                     </ion-card-title>
                     <ion-card-subtitle *ngIf="service == null">Estamos buscando tu servicio...
                         <ion-icon name="search-outline"></ion-icon>

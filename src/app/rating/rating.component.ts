@@ -25,6 +25,7 @@ interface ServiceModel{
   logo: any;
   comentario: any;
   placa: any;
+  urlEmpresa: any;
 }
 
 @Component({
@@ -41,6 +42,7 @@ export class RatingComponent {
   map = null;
   foto : any;
   logoEmpresa : any;
+  urlCompany : any;
   estado : any;
   myLatLng: any;
   colaborador : any;
@@ -87,6 +89,13 @@ export class RatingComponent {
         this.estado = data.estado;
         this.logoEmpresa = data.logo;
         this.placa = data.placa;
+        if(data.urlEmpresa != ""){
+          this.urlCompany = data.urlEmpresa.replace(/ /g, "");
+        }else {
+          this.urlCompany = "www.asiste.co"
+        }
+        
+        
       }
     });
   }

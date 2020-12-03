@@ -25,6 +25,7 @@ interface ServiceModel{
   logo: any;
   comentario: any;
   code: any;
+  urlEmpresa: any;
 }
 
 export class StatusServiceModel{
@@ -51,6 +52,7 @@ export class LocationComponent {
   map = null;
   foto : any;
   logoEmpresa : any;
+  urlCompany : any;
   estado : any;
   myLatLng: any;
   colaborador : any;
@@ -85,6 +87,12 @@ export class LocationComponent {
       if(data.estado === 'Terminado'){
         this.isFinished = true;
         this.logoEmpresa = data.logo;
+          if(data.urlEmpresa != ""){
+            this.urlCompany = data.urlEmpresa.replace(/ /g, "");
+          }else {
+            this.urlCompany = "www.asiste.co"
+          }
+        
         }else{
           this.isFinished = false;
           this.loading.present();
@@ -142,6 +150,11 @@ export class LocationComponent {
         this.service = data.servicio;
         this.estado = data.estado;
         this.logoEmpresa = data.logo;
+        if(data.urlEmpresa != ""){
+          this.urlCompany = data.urlEmpresa.replace(/ /g, "");
+        }else {
+          this.urlCompany = "www.asiste.co"
+        }
         this.map = new google.maps.Map(mapEle, {
           center: this.myLatLng,
           zoom: 16
